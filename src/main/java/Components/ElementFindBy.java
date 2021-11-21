@@ -1,16 +1,21 @@
 package Components;
 
-import Browser.DriverManager;
+import Properties.PropertiesLoader;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.IOException;
+import java.util.List;
 
 public class ElementFindBy  {
     WebDriver driver;
+    WebDriverWait wait;
     public ElementFindBy(WebDriver driver){
         this.driver = driver;
+        wait = new WebDriverWait(this.driver,PropertiesLoader.explicitWait);
     }
     public By findBy(String element) throws IOException, Exception {
         By by;
@@ -35,6 +40,31 @@ public class ElementFindBy  {
     }
     public WebElement findElementBy(String element)throws Exception{
        By by= findBy(element);
-       return driver.findElement(by);
+       return waitUntilElementVisible(by);
+    }
+
+   public List<WebElement> findElementsBy(String element)throws Exception{
+        By by = findBy(element);
+       return waitUntilAllElementsVisible(by);
+   }
+
+    public WebElement waitUntilElementVisible(By by)throws Exception{
+      return wait.until(ExpectedConditions.visibilityOfElementLocated((by)));
+    }
+
+    public List<WebElement> waitUntilAllElementsVisible(By by)throws Exception{
+        return wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(by));
+    }
+
+    public boolean waitUntilElementDisappear(By by)throws Exception{
+        return wait.until(ExpectedConditions.invisibilityOfElementLocated(by));
+    }
+
+    public WebElement waitUntilElementFound(By by)throws Exception{
+      return wait.until(ExpectedConditions.presenceOfElementLocated(by));
+    }
+
+    public WebElement waitUntilClickable(By by)throws Exception{
+        return wait.until(ExpectedConditions.elementToBeClickable(by));
     }
 }
