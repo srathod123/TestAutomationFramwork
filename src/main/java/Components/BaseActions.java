@@ -1,8 +1,6 @@
 package Components;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import com.relevantcodes.extentreports.LogStatus;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import javax.swing.*;
@@ -20,7 +18,19 @@ public class BaseActions {
             ElementFindBy obj = new ElementFindBy(Driver);
             WebElement elementBy = obj.findElementBy(ElementRef);
             elementBy.click();
-        }catch (Exception e){}
+            ExtentTestManager.getTest().log(LogStatus.PASS,"Clicked Successfully on["+ElementRef+"]");
+        }catch (Exception e){
+            ExtentTestManager.getTest().log(LogStatus.FAIL,"Clicked not Successful on["+ElementRef+"]");
+        }
+    }
+
+    public void ClearText(String ElementRef){
+        try{
+            ElementFindBy obj = new ElementFindBy(Driver);
+            WebElement elementBy = obj.findElementBy(ElementRef);
+            elementBy.clear();
+        }catch (Exception e){
+        }
     }
 
     public void typeTextInto(String ElementRef, String Text){
@@ -30,15 +40,20 @@ public class BaseActions {
             elementBy.click();
             elementBy.clear();
             elementBy.sendKeys(Text);
-        }catch (Exception e){}
+            ExtentTestManager.getTest().log(LogStatus.PASS,"Typed value ["+Text+"] into element["+ElementRef+"] ");
+        }catch (Exception e){
+            ExtentTestManager.getTest().log(LogStatus.FAIL,"Fail to typed value ["+Text+"] into element["+ElementRef+"] ");
+        }
     }
 
     public String getText(String ElementRef){
         try{
             ElementFindBy obj = new ElementFindBy(Driver);
             WebElement elementBy = obj.findElementBy(ElementRef);
+            ExtentTestManager.getTest().log(LogStatus.PASS,"Text fetched from element["+ElementRef+"]");
             return elementBy.getText();
         }catch (Exception e){
+            ExtentTestManager.getTest().log(LogStatus.FAIL,"Unable to fetch details["+ElementRef+"]");
             return null;
         }
     }
@@ -207,6 +222,19 @@ public class BaseActions {
         }catch(Exception e){
             return false;
         }
+    }
+
+    public static String captureScreenshot(String testName, WebDriver driver)throws Exception{
+        try{
+            ThreadLocal<String> base64 = new ThreadLocal<>();
+            TakesScreenshot screenshot = (TakesScreenshot) driver;
+            String snapshopFile = "data:image/png;base64, " + screenshot.getScreenshotAs(OutputType.BASE64);
+            base64.set(snapshopFile);
+            return base64.get();
+        }catch(Exception e){
+            ExtentTestManager.getTest().log(LogStatus.FAIL,"Unable to take screenshot");
+        }
+        return null;
     }
 
 }

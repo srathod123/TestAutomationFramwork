@@ -39,8 +39,8 @@
       <div class="suite">
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
-            <a href="#" class="navigator-link" panel-name="suite-SampleTest">
-              <span class="suite-name border-skipped">SampleTest</span>
+            <a href="#" class="navigator-link" panel-name="suite-DemoTest">
+              <span class="suite-name border-passed">DemoTest</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -50,37 +50,37 @@
             <div class="suite-section-content">
               <ul>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="test-xml-SampleTest">
+                  <a href="#" class="navigator-link " panel-name="test-xml-DemoTest">
                     <span>[unset file name]</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="testlist-SampleTest">
+                  <a href="#" class="navigator-link " panel-name="testlist-DemoTest">
                     <span class="test-stats">1 test</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="group-SampleTest">
+                  <a href="#" class="navigator-link " panel-name="group-DemoTest">
                     <span>0 groups</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="times-SampleTest">
+                  <a href="#" class="navigator-link " panel-name="times-DemoTest">
                     <span>Times</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="reporter-SampleTest">
+                  <a href="#" class="navigator-link " panel-name="reporter-DemoTest">
                     <span>Reporter output</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="ignored-methods-SampleTest">
+                  <a href="#" class="navigator-link " panel-name="ignored-methods-DemoTest">
                     <span>Ignored methods</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="chronological-SampleTest">
+                  <a href="#" class="navigator-link " panel-name="chronological-DemoTest">
                     <span>Chronological view</span>
                   </a> <!-- navigator-link  -->
                 </li>
@@ -93,21 +93,26 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,  1 skipped,  </span>
+                    <span class="method-stats">2 methods,   2 passed</span>
                   </li>
                   <li>
-                    <span class="method-list-title skipped">Skipped methods</span>
-                    <span class="show-or-hide-methods skipped">
-                      <a href="#" panel-name="suite-SampleTest" class="hide-methods skipped suite-SampleTest"> (hide)</a> <!-- hide-methods skipped suite-SampleTest -->
-                      <a href="#" panel-name="suite-SampleTest" class="show-methods skipped suite-SampleTest"> (show)</a> <!-- show-methods skipped suite-SampleTest -->
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-DemoTest" class="hide-methods passed suite-DemoTest"> (hide)</a> <!-- hide-methods passed suite-DemoTest -->
+                      <a href="#" panel-name="suite-DemoTest" class="show-methods passed suite-DemoTest"> (show)</a> <!-- show-methods passed suite-DemoTest -->
                     </span>
-                    <div class="method-list-content skipped suite-SampleTest">
+                    <div class="method-list-content passed suite-DemoTest">
                       <span>
-                        <img width="3%" src="skipped.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-SampleTest" title="SampleTest" hash-for-method="loadBrowserTest">loadBrowserTest</a> <!-- method navigator-link -->
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-DemoTest" title="DemoTest" hash-for-method="demoTest(Admin, admin123)">demoTest(Admin, admin123)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content skipped suite-SampleTest -->
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-DemoTest" title="DemoTest" hash-for-method="demoTest(Admin, admin12345)">demoTest(Admin, admin12345)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-DemoTest -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -118,51 +123,52 @@
     </div> <!-- navigator-root -->
     <div class="wrapper">
       <div class="main-panel-root">
-        <div panel-name="suite-SampleTest" class="panel SampleTest">
-          <div class="suite-SampleTest-class-skipped">
+        <div panel-name="suite-DemoTest" class="panel DemoTest">
+          <div class="suite-DemoTest-class-passed">
             <div class="main-panel-header rounded-window-top">
-              <img src="skipped.png"/>
-              <span class="class-name">SampleTest</span>
+              <img src="passed.png"/>
+              <span class="class-name">DemoTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="loadBrowserTest">
-                  </a> <!-- loadBrowserTest -->
-                  <span class="method-name">loadBrowserTest</span>
-                  <div class="stack-trace">java.io.FileNotFoundException: C:\Users\S &amp; K\FramworkPractice\src\test\resources\config.properties (The system cannot find the file specified)
-	at java.io.FileInputStream.open0(Native Method)
-	at java.io.FileInputStream.open(FileInputStream.java:195)
-	at java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:138)
-	at Properties.PropertiesLoader.initializeProperties(PropertiesLoader.java:29)
-	at Components.TestActions.setUpConfig(TestActions.java:18)
-... Removed 28 stack frames
-</div> <!-- stack-trace -->
+                  <a name="demoTest(Admin, admin123)">
+                  </a> <!-- demoTest(Admin, admin123) -->
+                  <span class="method-name">demoTest</span>
+                  <span class="parameters">(Admin, admin123)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="demoTest(Admin, admin12345)">
+                  </a> <!-- demoTest(Admin, admin12345) -->
+                  <span class="method-name">demoTest</span>
+                  <span class="parameters">(Admin, admin12345)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-SampleTest-class-skipped -->
-        </div> <!-- panel SampleTest -->
-        <div panel-name="test-xml-SampleTest" class="panel">
+          </div> <!-- suite-DemoTest-class-passed -->
+        </div> <!-- panel DemoTest -->
+        <div panel-name="test-xml-DemoTest" class="panel">
           <div class="main-panel-header rounded-window-top">
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
-&lt;suite verbose=&quot;0&quot; name=&quot;SampleTest&quot;&gt;
+&lt;suite verbose=&quot;0&quot; name=&quot;DemoTest&quot;&gt;
   &lt;test thread-count=&quot;5&quot; verbose=&quot;0&quot; name=&quot;Command line test&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;SampleTest&quot;/&gt;
+      &lt;class name=&quot;DemoTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Command line test --&gt;
-&lt;/suite&gt; &lt;!-- SampleTest --&gt;
+&lt;/suite&gt; &lt;!-- DemoTest --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="testlist-SampleTest" class="panel">
+        <div panel-name="testlist-DemoTest" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">Tests for SampleTest</span>
+            <span class="header-content">Tests for DemoTest</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <ul>
@@ -172,85 +178,75 @@
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="group-SampleTest" class="panel">
+        <div panel-name="group-DemoTest" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">Groups for SampleTest</span>
+            <span class="header-content">Groups for DemoTest</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="times-SampleTest" class="panel">
+        <div panel-name="times-DemoTest" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">Times for SampleTest</span>
+            <span class="header-content">Times for DemoTest</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="times-div">
               <script type="text/javascript">
-suiteTableInitFunctions.push('tableData_SampleTest');
-function tableData_SampleTest() {
+suiteTableInitFunctions.push('tableData_DemoTest');
+function tableData_DemoTest() {
 var data = new google.visualization.DataTable();
 data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(2);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'loadBrowserTest')
-data.setCell(0, 2, 'SampleTest')
-data.setCell(0, 3, 0);
-window.suiteTableData['SampleTest']= { tableData: data, tableDiv: 'times-div-SampleTest'}
+data.setCell(0, 1, 'demoTest')
+data.setCell(0, 2, 'DemoTest')
+data.setCell(0, 3, 2);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'demoTest')
+data.setCell(1, 2, 'DemoTest')
+data.setCell(1, 3, 1);
+window.suiteTableData['DemoTest']= { tableData: data, tableDiv: 'times-div-DemoTest'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 0 ms</span>
-              <div id="times-div-SampleTest">
-              </div> <!-- times-div-SampleTest -->
+              <span class="suite-total-time">Total running time: 3 ms</span>
+              <div id="times-div-DemoTest">
+              </div> <!-- times-div-DemoTest -->
             </div> <!-- times-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="reporter-SampleTest" class="panel">
+        <div panel-name="reporter-DemoTest" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">Reporter output for SampleTest</span>
+            <span class="header-content">Reporter output for DemoTest</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="ignored-methods-SampleTest" class="panel">
+        <div panel-name="ignored-methods-DemoTest" class="panel">
           <div class="main-panel-header rounded-window-top">
             <span class="header-content">0 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="chronological-SampleTest" class="panel">
+        <div panel-name="chronological-DemoTest" class="panel">
           <div class="main-panel-header rounded-window-top">
             <span class="header-content">Methods in chronological order</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">SampleTest</div> <!-- chronological-class-name -->
-              <div class="configuration-suite before">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">setUpConfig</span>
-                <span class="method-start">0 ms</span>
-              </div> <!-- configuration-suite before -->
-              <div class="configuration-method before">
-                <span class="method-name">setUpBrowser</span>
-                <span class="method-start">47 ms</span>
-              </div> <!-- configuration-method before -->
+              <div class="chronological-class-name">DemoTest</div> <!-- chronological-class-name -->
               <div class="test-method">
-                <span class="method-name">loadBrowserTest</span>
-                <span class="method-start">61 ms</span>
+                <span class="method-name">demoTest(Admin, admin123)</span>
+                <span class="method-start">0 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDownBrowser</span>
-                <span class="method-start">63 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-suite after">
-                <span class="method-name">tearDownObject</span>
-                <span class="method-start">314 ms</span>
-              </div> <!-- configuration-suite after -->
+              <div class="test-method">
+                <span class="method-name">demoTest(Admin, admin12345)</span>
+                <span class="method-start">6 ms</span>
+              </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->

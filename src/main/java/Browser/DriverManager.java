@@ -1,5 +1,4 @@
 package Browser;
-
 import Properties.PropertiesLoader;
 import org.openqa.selenium.WebDriver;
 

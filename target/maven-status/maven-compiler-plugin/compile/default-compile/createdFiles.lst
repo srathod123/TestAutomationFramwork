@@ -1,0 +1,7 @@
+Components\ExtentTestManager.class
+Components\RetryTransformer.class
+Components\DataProviderUtils.class
+Components\Retry.class
+Helpers\DataGenerator.class
+Components\ExtentReporter.class
+Components\DataProviderArgs.class

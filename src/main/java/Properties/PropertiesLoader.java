@@ -7,6 +7,7 @@ import java.util.Properties;
 
 public class PropertiesLoader {
         public static Properties configProperties;
+        public static String extendReportPath;
         public static String runOnBrowser;
         public static Boolean takeScreenshot;
         public static String chromeDriverPath;
@@ -22,11 +23,13 @@ public class PropertiesLoader {
         public static Boolean deleteAllCookies;
         public static Boolean remoteRun;
         public static String appUrl;
+        public static String environment;
 
         public static void initializeProperties() throws Exception{
             if(configProperties == null){
                 configProperties = new Properties();
-                FileInputStream fileInputStream = new FileInputStream(new File(System.getProperty("user.dir")+"//src//test//resources//config.properties"));
+                FileInputStream fileInputStream = new FileInputStream(new File(System.getProperty("user.dir")+"//src//test//resources//Config-"+PropertiesLoader.environment+".Properties"));
+                System.out.println("Environment Initialized:" + environment);
                 configProperties.load(fileInputStream);
             }
             runOnBrowser = configProperties.getProperty("RunOnBrowser");
@@ -44,6 +47,8 @@ public class PropertiesLoader {
             deleteAllCookies = Boolean.valueOf(configProperties.getProperty("deleteAllCookies"));
             remoteRun = Boolean.valueOf(configProperties.getProperty("remoteRun"));
             appUrl = configProperties.getProperty("appURL");
+            if(environment.isEmpty())
+                environment = "stg";
         }
 
 
